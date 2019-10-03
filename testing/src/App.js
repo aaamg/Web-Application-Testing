@@ -9,9 +9,15 @@ function App() {
   const [ball, setBall] = useState(0);
   
  
-  function out(){
-    if (strike = 4){
-      return strike = 0
+  function strikeOut(){
+    if (strike >= 3){
+      return strike - strike;
+    }
+  }
+
+  function walked(){
+    if (ball >= 4){
+      return ball - ball;
     }
   }
 
@@ -37,11 +43,11 @@ function App() {
         <div className="homeButtons">
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <button onClick={() => setStrike(strike + 1)}>Strike Count</button>
-          <button onClick={() => setStrike({out})}>Reset Strikes</button>
+          <button onClick={() => setStrike(strikeOut)}>Reset Strikes</button>
         </div>
         <div className="awayButtons">
           <button onClick={() => setBall(ball + 1)}>Ball Count</button>
-          <button onClick={() => setBall(ball + 1)}>Ball Count</button>
+          <button onClick={() => setBall(walked + 1)}>Ball Count</button>
         </div>
         <div className="awayButtons">
           <button onClick={() => setStrike(strike + 1)}>Foul</button>
